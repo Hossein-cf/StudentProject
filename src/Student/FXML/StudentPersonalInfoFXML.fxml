@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentPersonalInfoFXML">
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentPersonalInfoController">
    <children>
       <JFXTextField fx:id="txtShowStudentName" alignment="CENTER_RIGHT" labelFloat="true" layoutX="450.0" layoutY="70.0" prefHeight="25.0" prefWidth="152.0" promptText="نام" text=" " />
       <JFXTextField fx:id="txtShowStudentLastName" alignment="CENTER_RIGHT" labelFloat="true" layoutX="265.0" layoutY="70.0" prefHeight="25.0" prefWidth="139.0" promptText="نام خانوادگی" text=" " />

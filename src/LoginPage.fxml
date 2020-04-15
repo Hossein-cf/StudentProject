@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -38,11 +39,12 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
+            <Label fx:id="lblAlert" alignment="CENTER_RIGHT" layoutX="36.0" layoutY="367.0" prefHeight="17.0" prefWidth="240.0" text=" " />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="45.0" prefWidth="58.0" ripplerFill="RED" text=" ">
+      <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="33.0" ripplerFill="RED" text=" ">
          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="46.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="36.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Desktop/image/cans.png" />
                </image>

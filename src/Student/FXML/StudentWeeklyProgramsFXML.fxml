@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentWeeklyProgramsFXML">
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentWeeklyProgramsController">
    <children>
       <TableView fx:id="StudentTableView" layoutX="16.0" layoutY="20.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="339.0" prefWidth="587.0">
         <columns>

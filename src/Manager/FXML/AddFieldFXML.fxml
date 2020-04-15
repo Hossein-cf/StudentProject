@@ -12,7 +12,7 @@
       <TextField fx:id="txtFieldName" alignment="CENTER_RIGHT" layoutX="420.0" layoutY="37.0" prefHeight="29.0" prefWidth="144.0" promptText="نام درس" />
       <TextField fx:id="txtFieldUnit" alignment="CENTER_RIGHT" layoutX="294.0" layoutY="37.0" prefHeight="29.0" prefWidth="63.0" promptText="واحد" />
       <JFXComboBox fx:id="comboFirstMeeting" layoutX="411.0" layoutY="135.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="روز جلسه1" />
-      <JFXComboBox fx:id="ComboSecendMeeting" layoutX="411.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="روز جلسه2" />
+      <JFXComboBox fx:id="ComboSecondMeeting" layoutX="411.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="روز جلسه2" />
       <JFXComboBox fx:id="ComboFirstMeetingTime" layoutX="237.0" layoutY="135.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 1" />
       <JFXComboBox fx:id="ComboSecondMeetingTime" layoutX="237.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 2" />
       <DatePicker fx:id="quizTime" layoutX="23.0" layoutY="169.0" nodeOrientation="RIGHT_TO_LEFT" promptText="تاریخ جلسه امتحان" />
