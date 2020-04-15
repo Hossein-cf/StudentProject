@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Manager.AddFieldController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager.AddFieldController">
+   <children>
+      <TextField fx:id="txtFieldName" alignment="CENTER_RIGHT" layoutX="420.0" layoutY="37.0" prefHeight="29.0" prefWidth="144.0" promptText="نام درس" />
+      <TextField fx:id="txtFieldUnit" alignment="CENTER_RIGHT" layoutX="294.0" layoutY="37.0" prefHeight="29.0" prefWidth="63.0" promptText="واحد" />
+      <JFXComboBox fx:id="comboFirstMeeting" layoutX="411.0" layoutY="135.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="روز جلسه1" />
+      <JFXComboBox fx:id="ComboSecendMeeting" layoutX="411.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="روز جلسه2" />
+      <JFXComboBox fx:id="ComboFirstMeetingTime" layoutX="237.0" layoutY="135.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 1" />
+      <JFXComboBox fx:id="ComboSecondMeetingTime" layoutX="237.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 2" />
+      <DatePicker fx:id="quizTime" layoutX="23.0" layoutY="169.0" nodeOrientation="RIGHT_TO_LEFT" promptText="تاریخ جلسه امتحان" />
+      <Button fx:id="btnAddField" layoutX="256.0" layoutY="271.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="108.0" text="اضافه کردن" />
+      <Label fx:id="lblAlert" alignment="CENTER" layoutX="228.0" layoutY="332.0" prefHeight="17.0" prefWidth="164.0" text="lblAlert" />
+      <TextField fx:id="txtFieldCode" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="37.0" prefHeight="29.0" prefWidth="131.0" promptText="کد درس" />
+   </children>
 </AnchorPane>

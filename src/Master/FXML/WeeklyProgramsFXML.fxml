@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Master.WeeklyProgramsFXML"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Master.WeeklyProgramController">
+   <children>
+      <TableView fx:id="MasterTableView" layoutX="40.0" layoutY="28.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="296.0" prefWidth="538.0">
+        <columns>
+          <TableColumn prefWidth="98.0" text="نام درس" />
+          <TableColumn prefWidth="132.0" text="کد درس" />
+            <TableColumn prefWidth="52.0" text="واحد" />
+            <TableColumn prefWidth="254.0" text=" جلسه ها در طول هفته" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

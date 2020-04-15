@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Manager.AddMasterController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager.AddMasterController">
+   <children>
+      <TextField fx:id="txtMasterName" alignment="TOP_RIGHT" layoutX="448.0" layoutY="41.0" prefHeight="25.0" prefWidth="129.0" promptText="نام " />
+      <TextField fx:id="txtMasterLastName" alignment="TOP_RIGHT" layoutX="258.0" layoutY="41.0" prefHeight="25.0" prefWidth="129.0" promptText="نام خانوادگی" />
+      <TextField fx:id="txtMasterNationalCode" alignment="TOP_RIGHT" layoutX="63.0" layoutY="41.0" prefHeight="25.0" prefWidth="129.0" promptText="کد ملی" />
+      <TextField fx:id="txtMasterFatherName" alignment="TOP_RIGHT" layoutX="364.0" layoutY="121.0" prefHeight="25.0" prefWidth="129.0" promptText="نام پدر" />
+      <TextField fx:id="txtMasterPhoneNumber" alignment="TOP_RIGHT" layoutX="164.0" layoutY="121.0" prefHeight="25.0" prefWidth="129.0" promptText="شماره تلفن" />
+      <JFXComboBox fx:id="comboMasterGender" layoutX="351.0" layoutY="190.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="129.0" promptText="جنسیت" />
+      <DatePicker fx:id="masterDataPicker" layoutX="113.0" layoutY="190.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="37.0" prefWidth="181.0" promptText="تاریخ تولد" />
+      <Button fx:id="btnAddMaster" layoutX="271.0" layoutY="281.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="98.0" text="اضافه کردن " />
+      <Label fx:id="lblAlert" alignment="CENTER" layoutX="236.0" layoutY="332.0" prefHeight="25.0" prefWidth="165.0" text="Label" />
+   </children>
 </AnchorPane>

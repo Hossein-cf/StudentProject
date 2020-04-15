@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Manager.ChooseUnitController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="289.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Manager.ChooseUnitController">
+   <children>
+      <JFXComboBox layoutX="400.0" layoutY="44.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="167.0" promptText="دروس تعریف شده" />
+      <JFXComboBox layoutX="86.0" layoutY="44.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="167.0" promptText="اساتید تعریف شده" />
+      <Button layoutX="205.0" layoutY="140.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="209.0" text="اضافه کردن به لیست دروس اراعه شده" />
+   </children>
 </AnchorPane>

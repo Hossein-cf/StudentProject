@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Student.StudentPersonalInfoFXML"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Student.StudentPersonalInfoFXML">
+   <children>
+      <JFXTextField fx:id="txtShowStudentName" alignment="CENTER_RIGHT" labelFloat="true" layoutX="450.0" layoutY="70.0" prefHeight="25.0" prefWidth="152.0" promptText="نام" text=" " />
+      <JFXTextField fx:id="txtShowStudentLastName" alignment="CENTER_RIGHT" labelFloat="true" layoutX="265.0" layoutY="70.0" prefHeight="25.0" prefWidth="139.0" promptText="نام خانوادگی" text=" " />
+      <JFXTextField fx:id="txtShowStudentCode" alignment="CENTER_RIGHT" labelFloat="true" layoutX="50.0" layoutY="70.0" prefHeight="25.0" prefWidth="169.0" promptText="شماره دانشجویی" text=" " />
+      <JFXTextField fx:id="txtShowStudentFatherName" alignment="CENTER_RIGHT" labelFloat="true" layoutX="389.0" layoutY="169.0" prefHeight="25.0" prefWidth="152.0" promptText="نام پدر" text=" " />
+      <JFXTextField fx:id="txtShowStudentNationalCode" alignment="CENTER_RIGHT" labelFloat="true" layoutX="107.0" layoutY="169.0" prefHeight="25.0" prefWidth="169.0" promptText="کد ملی" text=" " />
+   </children>
 </AnchorPane>
