@@ -10,4 +10,5 @@ public class Student extends Person {
     public void setStudentNumber(long studentNumber) {
         this.studentNumber = studentNumber;
     }
+
 }

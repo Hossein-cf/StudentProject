@@ -2,7 +2,7 @@ package Extra;
 
 import java.util.ArrayList;
 
-public class Manager extends Person {
+public class Archive {
   private static ArrayList<Student> students;
   private static ArrayList<Master> masters;
   private static ArrayList<Field> fields;
@@ -12,7 +12,7 @@ public class Manager extends Person {
     }
 
     public static void setStudents(ArrayList<Student> students) {
-        Manager.students = students;
+        Archive.students = students;
     }
 
     public static ArrayList<Master> getMasters() {
@@ -20,7 +20,7 @@ public class Manager extends Person {
     }
 
     public static void setMasters(ArrayList<Master> masters) {
-        Manager.masters = masters;
+        Archive.masters = masters;
     }
 
     public static ArrayList<Field> getFields() {
@@ -28,6 +28,6 @@ public class Manager extends Person {
     }
 
     public static void setFields(ArrayList<Field> fields) {
-        Manager.fields = fields;
+        Archive.fields = fields;
     }
 }
