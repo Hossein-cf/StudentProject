@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,7 +26,9 @@ public class AddMasterController implements Initializable {
 
 
 
+    public void addMaster(MouseEvent mouseEvent) {
 
+    }
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -33,6 +36,8 @@ public class AddMasterController implements Initializable {
         comboMasterGender.getItems().addAll(gender);
 
     }
+
+
 
 
 }
