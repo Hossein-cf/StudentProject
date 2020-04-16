@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="473.0" fitWidth="855.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../src/Pics/bg.jpg" />
+            <Image url="@./Pics/bg.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="537.0" layoutY="-3.0" opacity="0.85" prefHeight="479.0" prefWidth="306.0" style="-fx-background-color: #81B9BF;" AnchorPane.bottomAnchor="-3.0" AnchorPane.rightAnchor="-6.0">
@@ -31,10 +31,10 @@
             <JFXComboBox fx:id="comboUseCase" labelFloat="true" layoutX="36.0" layoutY="299.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="232.0" promptText="نوع کاربری" unFocusColor="BLACK" />
             <ImageView fitHeight="101.0" fitWidth="132.0" layoutX="82.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../src/Pics/logoUni.png" />
+                  <Image url="@./Pics/logoUni.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnLogin" layoutX="37.0" layoutY="401.0" prefHeight="37.0" prefWidth="232.0" style="-fx-background-color: #4DD0E1; -fx-background-radius: 5;" text="ورود">
+            <JFXButton fx:id="btnLogin" layoutX="37.0" layoutY="401.0" prefHeight="37.0" prefWidth="232.0" style="-fx-background-color: #4DD0E1; -fx-background-radius: 5;" text="ورود" onMouseClicked="#login">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -42,11 +42,11 @@
             <Label fx:id="lblAlert" alignment="CENTER_RIGHT" layoutX="36.0" layoutY="367.0" prefHeight="17.0" prefWidth="240.0" text=" " />
          </children>
       </AnchorPane>
-      <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="33.0" ripplerFill="RED" text=" ">
+      <JFXButton fx:id="btnClose" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="33.0" ripplerFill="RED" text=" " onMouseClicked="#exit">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="36.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Desktop/image/cans.png" />
+                  <Image url="@./Pics/cans.png" />
                </image>
             </ImageView>
          </graphic>

@@ -14,8 +14,8 @@
    <children>
       <HBox alignment="CENTER_RIGHT" layoutX="-2.0" prefHeight="41.0" prefWidth="749.0" style="-fx-background-color: #006DB3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton fx:id="btnBack" prefHeight="39.0" prefWidth="59.0" text="بازگشت" />
-            <JFXButton fx:id="btnExit" prefHeight="39.0" prefWidth="59.0" text="خروج" />
+            <JFXButton fx:id="btnBack" prefHeight="39.0" prefWidth="59.0" text="بازگشت" onMouseClicked="#back"/>
+            <JFXButton fx:id="btnExit" prefHeight="39.0" prefWidth="59.0" text="خروج" onMouseClicked="#exit"/>
          </children>
       </HBox>
       <AnchorPane fx:id="mainAnchorPane" layoutX="15.0" layoutY="54.0" prefHeight="420.0" prefWidth="718.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;">

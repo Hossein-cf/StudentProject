@@ -1,12 +1,16 @@
 package Manager;
 
 import com.jfoenix.controls.JFXComboBox;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddMasterController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AddMasterController implements Initializable {
     public TextField txtMasterName;
     public TextField txtMasterLastName;
     public TextField txtMasterNationalCode;
@@ -16,4 +20,19 @@ public class AddMasterController {
     public DatePicker masterDataPicker;
     public Button btnAddMaster;
     public Label lblAlert;
+
+
+
+
+
+
+
+
+    public void initialize(URL location, ResourceBundle resources) {
+        String[] gender = {"آقا","خانم"};
+        comboMasterGender.getItems().addAll(gender);
+
+    }
+
+
 }

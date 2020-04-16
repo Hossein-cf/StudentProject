@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -14,6 +16,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class LoginPageController implements Initializable {
@@ -53,13 +56,28 @@ public class LoginPageController implements Initializable {
 
     }
 
+    public void exit() {
+
+        Alert alert = new Alert(Alert.AlertType.WARNING, "آیا میخواهید خارج شوید؟ ", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("اخطار");
+        alert.setHeaderText(null);
+        ButtonType yes = new ButtonType("بله");
+        ButtonType no = new ButtonType("خیر");
+        alert.getButtonTypes().setAll(yes,no);
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent())
+            if (result.get() == yes)
+                System.exit(0);
+    }
+
     public void  loadNewStudent(){
 
         Parent root;
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../src/NewStudent/NewStudentFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("./NewStudent/NewStudentFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -77,7 +95,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../src/Student/FXML/StudentFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Student/FXML/StudentFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -97,7 +115,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../src/Master/FXML/Master.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Master/FXML/Master.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -115,7 +133,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../src/Manager/FXML/ManagerFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Manager/FXML/ManagerFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
