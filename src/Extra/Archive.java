@@ -61,4 +61,13 @@ public class Archive {
         return fields;
     }
 
+    public Field getFieldForMaster (long masterNumber){
+        for (Field field : getFields()) {
+            if (field.getMaster().getMasterNumber() == masterNumber)
+                return field;
+        }
+
+
+        return null;
+    }
 }
