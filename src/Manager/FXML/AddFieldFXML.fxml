@@ -16,7 +16,7 @@
       <JFXComboBox fx:id="ComboFirstMeetingTime" layoutX="237.0" layoutY="135.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 1" />
       <JFXComboBox fx:id="ComboSecondMeetingTime" layoutX="237.0" layoutY="198.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="144.0" promptText="ساعت جلسه 2" />
       <DatePicker fx:id="quizTime" layoutX="23.0" layoutY="169.0" nodeOrientation="RIGHT_TO_LEFT" promptText="تاریخ جلسه امتحان" />
-      <Button fx:id="btnAddField" layoutX="256.0" layoutY="271.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="108.0" text="اضافه کردن" />
+      <Button fx:id="btnAddField" layoutX="256.0" layoutY="271.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="108.0" onMouseClicked="#addField" text="اضافه کردن" />
       <Label fx:id="lblAlert" alignment="CENTER" layoutX="228.0" layoutY="332.0" prefHeight="17.0" prefWidth="164.0" text=" " />
       <TextField fx:id="txtFieldCode" alignment="CENTER_RIGHT" layoutX="89.0" layoutY="37.0" prefHeight="29.0" prefWidth="131.0" promptText="کد درس" />
    </children>
