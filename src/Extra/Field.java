@@ -7,27 +7,27 @@ public class Field {
     private String fieldName;
     private String fieldNumber;
     private int unit;
-    private String classStartDay;
-    private String classStartTime;
-    private Date examStartTime;
+    private String firstMeeting;
+    private String secondMeeting;
+    private String examStartTime;
     private Master master;
     private ArrayList<Student> listOfStudent;
 
 
-    public void setClassStartDay(String classStartDay) {
-        this.classStartDay = classStartDay;
+    public void setFirstMeeting(String classStartDay) {
+        this.firstMeeting = classStartDay;
     }
 
-    public void setClassStartTime(String classStartTime) {
-        this.classStartTime = classStartTime;
+    public void setSecondMeeting(String classStartTime) {
+        this.secondMeeting = classStartTime;
     }
 
-    public String getClassStartDay() {
-        return classStartDay;
+    public String getFirstMeeting() {
+        return firstMeeting;
     }
 
-    public String getClassStartTime() {
-        return classStartTime;
+    public String getSecondMeeting() {
+        return secondMeeting;
     }
 
     public String getFieldName() {
@@ -54,11 +54,11 @@ public class Field {
         this.unit = unit;
     }
 
-    public void setExamStartTime(Date examStartTime) {
+    public void setExamStartTime(String examStartTime) {
         this.examStartTime = examStartTime;
     }
 
-    public Date getExamStartTime() {
+    public String getExamStartTime() {
         return examStartTime;
     }
 
