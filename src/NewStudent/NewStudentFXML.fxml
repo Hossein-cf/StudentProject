@@ -9,13 +9,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="488.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewStudent.NewStudentController">
+<AnchorPane prefHeight="488.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewStudent.NewStudentController">
    <children>
       <HBox alignment="CENTER_RIGHT" layoutX="-2.0" prefHeight="41.0" prefWidth="749.0" style="-fx-background-color: #006DB3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton fx:id="btnBack" prefHeight="39.0" prefWidth="59.0" text="بازگشت" onMouseClicked="#back"/>
-            <JFXButton fx:id="btnExit" prefHeight="39.0" prefWidth="59.0" text="خروج" onMouseClicked="#exit"/>
+            <JFXButton fx:id="btnBack" onMouseClicked="#back" prefHeight="39.0" prefWidth="59.0" text="بازگشت" />
+            <JFXButton fx:id="btnExit" onMouseClicked="#exit" prefHeight="39.0" prefWidth="59.0" text="خروج" />
          </children>
       </HBox>
       <AnchorPane fx:id="mainAnchorPane" layoutX="15.0" layoutY="54.0" prefHeight="420.0" prefWidth="718.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;">
@@ -25,14 +24,14 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField alignment="CENTER_RIGHT" layoutX="571.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام " />
-            <TextField alignment="CENTER_RIGHT" layoutX="359.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام خانوادگی" />
-            <TextField alignment="CENTER_RIGHT" layoutX="113.0" layoutY="98.0" prefHeight="30.0" prefWidth="166.0" promptText="کد ملی" />
-            <TextField alignment="CENTER_RIGHT" layoutX="571.0" layoutY="180.0" prefHeight="30.0" prefWidth="129.0" promptText="نام پدر" />
-            <TextField alignment="CENTER_RIGHT" layoutX="527.0" layoutY="263.0" prefHeight="30.0" prefWidth="177.0" promptText="شماره تلفن" />
-            <JFXComboBox layoutX="359.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="129.0" promptText="جنسیت" />
-            <JFXComboBox layoutX="122.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="148.0" promptText="نوع دیپلم" />
-            <Button layoutX="315.0" layoutY="293.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="113.0" text="ثبت مشخصات" />
+            <TextField fx:id="txtName" alignment="CENTER_RIGHT" layoutX="571.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام " />
+            <TextField fx:id="txtLastName" alignment="CENTER_RIGHT" layoutX="359.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام خانوادگی" />
+            <TextField fx:id="txtNationalNumber" alignment="CENTER_RIGHT" layoutX="113.0" layoutY="98.0" prefHeight="30.0" prefWidth="166.0" promptText="کد ملی" />
+            <TextField fx:id="txtFatherName" alignment="CENTER_RIGHT" layoutX="571.0" layoutY="180.0" prefHeight="30.0" prefWidth="129.0" promptText="نام پدر" />
+            <TextField fx:id="txtPhoneNumber" alignment="CENTER_RIGHT" layoutX="527.0" layoutY="263.0" prefHeight="30.0" prefWidth="177.0" promptText="شماره تلفن" />
+            <JFXComboBox fx:id="comboBoxGender" layoutX="359.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="129.0" promptText="جنسیت" />
+            <JFXComboBox fx:id="comboBoxDiplomaType" layoutX="122.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="148.0" promptText="نوع دیپلم" />
+            <Button layoutX="315.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#confirm" prefHeight="47.0" prefWidth="113.0" text="ثبت مشخصات" />
             <Label alignment="CENTER" layoutX="189.0" layoutY="364.0" prefHeight="19.0" prefWidth="366.0" text="lblAlert" />
          </children>
       </AnchorPane>

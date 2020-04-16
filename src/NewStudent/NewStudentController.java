@@ -1,24 +1,42 @@
 package NewStudent;
 
+import Extra.Archive;
+import Extra.Student;
+import Extra.StudentAndMasterNumberAndFieldSerialProducer;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class NewStudentController {
+public class NewStudentController  extends Archive implements Initializable  {
     public JFXButton btnBack;
     public JFXButton btnExit;
     public AnchorPane mainAnchorPane;
     public Label lbl1;
+    public TextField txtName;
+    public TextField txtLastName;
+    public TextField txtNationalNumber;
+    public TextField txtFatherName;
+    public TextField txtPhoneNumber;
+    public JFXComboBox comboBoxGender;
+    public JFXComboBox comboBoxDiplomaType;
+
 
     public void exit() {
 
@@ -67,5 +85,28 @@ public class NewStudentController {
             }
         }
 
+    }
+
+    public void confirm(MouseEvent mouseEvent) {
+        Student student = new Student();
+        student.setName(txtName.getText());
+        student.setFatherName(txtFatherName.getText());
+        student.setLastName(txtLastName.getText());
+        student.setStudentNumber(new StudentAndMasterNumberAndFieldSerialProducer().getStudentNumber());
+        student.setNationalNumber(Long.parseLong(txtNationalNumber.getText()));
+        student.setPhoneNumber(txtPhoneNumber.getText());
+        student.setTypeOfDiploma((String)comboBoxDiplomaType.getValue());
+        student.setGender((String)comboBoxGender.getValue());
+
+        ArrayList<Student> list= getStudents();
+        list.add(student);
+        setStudents(list);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        comboBoxGender.getItems().set(0,"زن");
+        comboBoxGender.getItems().set(1,"مرد");
+        comboBoxDiplomaType.getItems().set(0,"ریاضی فیزیک");
     }
 }
