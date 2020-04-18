@@ -43,6 +43,19 @@ public class MasterController {
 
 
     }
+    public void loadListOfStudent(){
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("./FXML/StudentsListFXML.fxml"));
+            MasterMainAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+            ex.printStackTrace();
+        }
+
+
+    }
+
+
     public void exit() {
 
         Alert alert = new Alert(Alert.AlertType.WARNING, "آیا میخواهید خارج شوید؟ ", ButtonType.YES, ButtonType.NO);

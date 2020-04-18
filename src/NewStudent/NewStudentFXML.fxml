@@ -25,14 +25,14 @@
                </font>
             </Label>
             <TextField fx:id="txtName" alignment="CENTER_RIGHT" layoutX="571.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام " />
-            <TextField fx:id="txtLastName" alignment="CENTER_RIGHT" layoutX="359.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام خانوادگی" />
-            <TextField fx:id="txtNationalNumber" alignment="CENTER_RIGHT" layoutX="113.0" layoutY="98.0" prefHeight="30.0" prefWidth="166.0" promptText="کد ملی" />
+            <TextField fx:id="txtLastName" alignment="CENTER_RIGHT" layoutX="313.0" layoutY="98.0" prefHeight="30.0" prefWidth="129.0" promptText="نام خانوادگی" />
+            <TextField fx:id="txtNationalNumber" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="98.0" prefHeight="30.0" prefWidth="166.0" promptText="کد ملی" />
             <TextField fx:id="txtFatherName" alignment="CENTER_RIGHT" layoutX="571.0" layoutY="180.0" prefHeight="30.0" prefWidth="129.0" promptText="نام پدر" />
             <TextField fx:id="txtPhoneNumber" alignment="CENTER_RIGHT" layoutX="527.0" layoutY="263.0" prefHeight="30.0" prefWidth="177.0" promptText="شماره تلفن" />
-            <JFXComboBox fx:id="comboBoxGender" layoutX="359.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="129.0" promptText="جنسیت" />
-            <JFXComboBox fx:id="comboBoxDiplomaType" layoutX="122.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="148.0" promptText="نوع دیپلم" />
+            <JFXComboBox fx:id="comboBoxGender" layoutX="313.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="129.0" promptText="جنسیت" />
+            <JFXComboBox fx:id="comboBoxDiplomaType" layoutX="76.0" layoutY="183.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="148.0" promptText="نوع دیپلم" />
             <Button layoutX="315.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#confirm" prefHeight="47.0" prefWidth="113.0" text="ثبت مشخصات" />
-            <Label alignment="CENTER" layoutX="189.0" layoutY="364.0" prefHeight="19.0" prefWidth="366.0" text="lblAlert" />
+            <Label alignment="CENTER" layoutX="189.0" layoutY="364.0" prefHeight="19.0" prefWidth="366.0" text=" " />
          </children>
       </AnchorPane>
    </children>
