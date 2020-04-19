@@ -77,14 +77,14 @@ public class Archive implements Initializable {
         return null;
     }
 
-    public  boolean isNewStudent(String nationalNumber, String fileNumber) {
+    public boolean isNewStudent(String nationalNumber, String fileNumber) {
         try {
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("src\\newStudents.csv")));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("src\\Files\\newStudents.csv")));
             bufferedReader.readLine();
             while (bufferedReader.ready()) {
                 String[] strings = bufferedReader.readLine().split(",");
-                System.out.println(strings[2]+"   "+ strings[6]);
+                System.out.println(strings[2] + "   " + strings[6]);
                 if (strings[2].equals(nationalNumber) && strings[6].equals(fileNumber))
                     return true;
             }
@@ -96,27 +96,19 @@ public class Archive implements Initializable {
         return false;
     }
 
+    public Field getField(String fieldNumber) {
+
+        for (Field field : getFields()) {
+            if (field.getFieldNumber().equals(fieldNumber))
+                return field;
+        }
+        return null;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    public static void main(String[] args) {
-        try {
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("src\\Files\\newStudents.csv")));
-            bufferedReader.readLine();
-            while (bufferedReader.ready()) {
-                String[] strings = bufferedReader.readLine().split(",");
-                System.out.println(strings[2]+"   "+ strings[6]);
-//                if (strings[2].equals(nationalNumber) && strings[6].equals(fileNumber))
-//                    return true;
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-
-
-    }
 }
