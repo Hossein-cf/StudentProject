@@ -65,7 +65,7 @@ public class AddFieldController extends Archive implements Initializable   {
         comboFirstMeeting.getItems().addAll(days);
         ComboSecondMeeting.getItems().addAll(days);
         ComboFirstMeetingTime.getItems().addAll(times);
-        ComboSecondMeeting.getItems().addAll(times);
+        ComboSecondMeetingTime.getItems().addAll(times);
 
 
     }

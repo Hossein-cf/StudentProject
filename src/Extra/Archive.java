@@ -1,11 +1,17 @@
 package Extra;
 
-import java.util.ArrayList;
+import javafx.fxml.Initializable;
 
-public class Archive {
-    private static ArrayList<Student> students;
-    private static ArrayList<Master> masters;
-    private static ArrayList<Field> fields;
+import java.io.*;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+public class Archive implements Initializable {
+    private static ArrayList<Student> students = new ArrayList<>();
+    private static ArrayList<Master> masters = new ArrayList<>();
+    private static ArrayList<Field> fields = new ArrayList<>();
 
     public static ArrayList<Student> getStudents() {
         return students;
@@ -61,7 +67,7 @@ public class Archive {
         return fields;
     }
 
-    public Field getFieldForMaster (long masterNumber){
+    public Field getFieldForMaster(long masterNumber) {
         for (Field field : getFields()) {
             if (field.getMaster().getMasterNumber() == masterNumber)
                 return field;
@@ -70,4 +76,39 @@ public class Archive {
 
         return null;
     }
+
+    public boolean isNewStudent(String nationalNumber, String fileNumber) {
+        try {
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("src\\Files\\newStudents.csv")));
+            bufferedReader.readLine();
+            while (bufferedReader.ready()) {
+                String[] strings = bufferedReader.readLine().split(",");
+                System.out.println(strings[2] + "   " + strings[6]);
+                if (strings[2].equals(nationalNumber) && strings[6].equals(fileNumber))
+                    return true;
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        return false;
+    }
+
+    public Field getField(String fieldNumber) {
+
+        for (Field field : getFields()) {
+            if (field.getFieldNumber().equals(fieldNumber))
+                return field;
+        }
+        return null;
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+
 }

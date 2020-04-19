@@ -5,6 +5,8 @@ import Extra.Student;
 import Extra.StudentAndMasterNumberAndFieldSerialProducer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -69,7 +71,7 @@ public class NewStudentController  extends Archive implements Initializable  {
                 try {
                     Stage stage = (Stage) btnBack.getScene().getWindow();
                     stage.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../LoginPage.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../LoginPage/LoginPage.fxml"));
                     root = loader.load();
                     stage = new Stage();
                     Stage finalStage = stage;
@@ -101,16 +103,18 @@ public class NewStudentController  extends Archive implements Initializable  {
         ArrayList<Student> list= getStudents();
         list.add(student);
         setStudents(list);
-        loadResultPage();
+        loadResultPage(student.getStudentNumber());
 
 
 
     }
 
-    public void loadResultPage(){
+    public void loadResultPage(Long studentNumber){
         try {
             AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("./ShowResult.fxml"));
             mainAnchorPane.getChildren().addAll(anchorPane);
+            JFXTextField jfxTextField = (JFXTextField) anchorPane.getChildren().get(0);
+            jfxTextField.setText(studentNumber+"");
         } catch (IOException ex) {
             System.out.println("Problem in loading");
             ex.printStackTrace();
@@ -121,8 +125,9 @@ public class NewStudentController  extends Archive implements Initializable  {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboBoxGender.getItems().set(0,"زن");
-        comboBoxGender.getItems().set(1,"مرد");
-        comboBoxDiplomaType.getItems().set(0,"ریاضی فیزیک");
+       String []gender = {"مرد","زن"};
+       String [] diplomaType = {"ریاضی فیزیک"};
+       comboBoxGender.setItems(FXCollections.observableArrayList(gender));
+       comboBoxDiplomaType.setItems(FXCollections.observableArrayList(diplomaType));
     }
 }
