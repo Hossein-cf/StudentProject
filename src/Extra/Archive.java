@@ -1,10 +1,14 @@
 package Extra;
 
+import javafx.fxml.Initializable;
+
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class Archive {
+public class Archive implements Initializable {
     private static ArrayList<Student> students = new ArrayList<>();
     private static ArrayList<Master> masters = new ArrayList<>();
     private static ArrayList<Field> fields = new ArrayList<>();
@@ -93,7 +97,26 @@ public class Archive {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public static void main(String[] args) {
+        try {
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("src\\Files\\newStudents.csv")));
+            bufferedReader.readLine();
+            while (bufferedReader.ready()) {
+                String[] strings = bufferedReader.readLine().split(",");
+                System.out.println(strings[2]+"   "+ strings[6]);
+//                if (strings[2].equals(nationalNumber) && strings[6].equals(fileNumber))
+//                    return true;
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
 
-
+    }
 }

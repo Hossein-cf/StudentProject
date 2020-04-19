@@ -5,9 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="420.0" prefWidth="718.0" style="-fx-background-radius: 5; -fx-background-color: B2EBF2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewStudent.ShowResultController">
+<AnchorPane prefHeight="420.0" prefWidth="718.0" style="-fx-background-radius: 5; -fx-background-color: B2EBF2;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewStudent.ShowResultController">
    <children>
+      <JFXTextField fx:id="txtShowStudentCode" editable="false" layoutX="244.0" layoutY="168.0" prefHeight="25.0" prefWidth="253.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXTextField>
       <Label alignment="CENTER" layoutX="211.0" layoutY="29.0" prefHeight="30.0" prefWidth="318.0" text="دانشجوی گرامی مشخصات شما با موفقیت ثبت شد!!!">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -18,10 +22,5 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtShowStudentCode" editable="false" layoutX="244.0" layoutY="168.0" prefHeight="25.0" prefWidth="253.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXTextField>
    </children>
 </AnchorPane>

@@ -11,6 +11,7 @@ public class ShowResultController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
+
         //TODO producing studentNumber and set in the textBox
     }
 }

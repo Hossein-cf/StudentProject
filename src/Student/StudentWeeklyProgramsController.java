@@ -2,6 +2,7 @@ package Student;
 
 import Extra.Archive;
 import Extra.Field;
+import LoginPage.LoginPageController;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -25,18 +26,10 @@ public class StudentWeeklyProgramsController implements Initializable {
     public TableColumn<Person, String> clmStudentMeetingTime;
 
     private void setTable() {
-        JFXTextField userName = new JFXTextField();
-        try {
 
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/LoginPage.fxml"));
-            AnchorPane anchorPane1 = (AnchorPane) anchorPane.getChildren().get(1);
-            userName = (JFXTextField) anchorPane1.getChildren().get(0);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         Archive archive = new Archive();
         ObservableList<Person> people = FXCollections.observableArrayList();
-        for (Field field : archive.getFieldListForStudent(Long.parseLong(userName.getText()))) {
+        for (Field field : archive.getFieldListForStudent(new LoginPageController().getUserName())) {
             people.add(new Person(field.getFieldName(), field.getFieldNumber() + "", field.getUnit() + "", field.getMaster().getName() + " " + field.getMaster().getLastName(), field.getFirstMeeting() + "\n" + field.getSecondMeeting()));
         }
         clmFieldName.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldName"));

@@ -84,7 +84,7 @@ public class ManagerController {
                 try {
                     Stage stage = (Stage) btnBack.getScene().getWindow();
                     stage.close();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../LoginPage.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../LoginPage/LoginPage.fxml"));
                     root = loader.load();
                     stage = new Stage();
                     Stage finalStage = stage;

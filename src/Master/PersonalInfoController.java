@@ -2,6 +2,7 @@ package Master;
 
 import Extra.Archive;
 import Extra.Master;
+import LoginPage.LoginPageController;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,17 +19,8 @@ public class PersonalInfoController implements Initializable {
     public JFXTextField txtShowMasterNationalCode;
 
 public void setInformation(){
-    JFXTextField userName= new JFXTextField();
-    try {
 
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/LoginPage.fxml"));
-        AnchorPane anchorPane1 = (AnchorPane) anchorPane.getChildren().get(1);
-        userName = (JFXTextField) anchorPane1.getChildren().get(0);
-    }catch (Exception e ){
-        System.out.println(e.getMessage());
-    }
-
-    Master master = new Archive().getMaster(Long.parseLong(userName.getText()));
+    Master master = new Archive().getMaster(new LoginPageController().getUserName());
     txtShowMasterCode.setText(master.getMasterNumber()+"");
     txtShowMasterFatherName.setText(master.getFatherName());
     txtShowMasterLastName.setText(master.getLastName());

@@ -1,3 +1,5 @@
+package LoginPage;
+
 import Extra.Archive;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -27,6 +29,15 @@ public class LoginPageController implements Initializable {
     public JFXButton btnLogin;
     public JFXButton btnClose;
     public Label lblAlert;
+    public static long userName;
+
+    public  long getUserName() {
+        return userName;
+    }
+
+    public  void setUserName(long userName) {
+        LoginPageController.userName = userName;
+    }
 
     private int findComboIndex(JFXComboBox Box) {
         return Box.getSelectionModel().getSelectedIndex();
@@ -44,21 +55,26 @@ public class LoginPageController implements Initializable {
             alert("لفا فیلد هار تکمیل کنید", lblAlert, "red");
         } else {
             if (findComboIndex(comboUseCase) == 0) {
-                if (archive.isNewStudent(txtUserName.getText(), txtPassWord.getText()))
+                if (archive.isNewStudent(txtUserName.getText(), txtPassWord.getText())) {
                     loadNewStudent();
-                else
+                    userName=Long.parseLong(txtUserName.getText());
+                } else
                     alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
 
             } else if (findComboIndex(comboUseCase) == 1) {
-                if (archive.getStudent(Long.parseLong(txtUserName.getText())) != null)
+                if (archive.getStudent(Long.parseLong(txtUserName.getText())) != null) {
                     loadStudent();
-                else
+                    userName=Long.parseLong(txtUserName.getText());
+
+                }else
                     alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
 
             } else if (findComboIndex(comboUseCase) == 2) {
-                if (archive.getMaster(Long.parseLong(txtUserName.getText())) != null)
+                if (archive.getMaster(Long.parseLong(txtUserName.getText())) != null) {
                     loadMaster();
-                else
+                    userName=Long.parseLong(txtUserName.getText());
+
+                } else
                     alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
 
             } else if (findComboIndex(comboUseCase) == 3) {
@@ -89,7 +105,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("./NewStudent/NewStudentFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../NewStudent/NewStudentFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -108,7 +124,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Student/FXML/StudentFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Student/FXML/StudentFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -129,7 +145,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Master/FXML/Master.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Master/FXML/Master.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;
@@ -148,7 +164,7 @@ public class LoginPageController implements Initializable {
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("./Manager/FXML/ManagerFXML.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Manager/FXML/ManagerFXML.fxml"));
             root = loader.load();
             stage = new Stage();
             Stage finalStage = stage;

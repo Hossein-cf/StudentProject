@@ -2,6 +2,7 @@ package Master;
 
 import Extra.Archive;
 import Extra.Field;
+import LoginPage.LoginPageController;
 import com.jfoenix.controls.JFXTextField;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -24,16 +25,8 @@ public class WeeklyProgramController implements Initializable {
     public TableColumn<Person, String> clmMasterFieldTimeInWeek;
 
     private void setTable() {
-        JFXTextField userName = new JFXTextField();
-        try {
 
-            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/LoginPage.fxml"));
-            AnchorPane anchorPane1 = (AnchorPane) anchorPane.getChildren().get(1);
-            userName = (JFXTextField) anchorPane1.getChildren().get(0);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        Field field = new Archive().getFieldForMaster(Long.parseLong(userName.getText()));
+        Field field = new Archive().getFieldForMaster(new LoginPageController().getUserName());
         ObservableList<Person> people = FXCollections.observableArrayList(new Person(field.getFieldName(), field.getFieldNumber() + "", field.getUnit() + "", field.getFirstMeeting() + "\n" + field.getSecondMeeting()));
         clmMasterFieldCode.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldCode"));
         clmMasterFieldName.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldName"));
