@@ -5,6 +5,7 @@ import Extra.Student;
 import Extra.StudentAndMasterNumberAndFieldSerialProducer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -105,8 +106,9 @@ public class NewStudentController  extends Archive implements Initializable  {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboBoxGender.getItems().set(0,"زن");
-        comboBoxGender.getItems().set(1,"مرد");
-        comboBoxDiplomaType.getItems().set(0,"ریاضی فیزیک");
+       String []gender = {"مرد","زن"};
+       String [] diplomaType = {"ریاضی فیزیک"};
+       comboBoxGender.setItems(FXCollections.observableArrayList(gender));
+       comboBoxDiplomaType.setItems(FXCollections.observableArrayList(diplomaType));
     }
 }

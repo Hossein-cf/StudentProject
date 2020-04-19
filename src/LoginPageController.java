@@ -1,3 +1,4 @@
+import Extra.Archive;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -36,19 +37,30 @@ public class LoginPageController implements Initializable {
         lbl.setStyle("-fx-text-fill: " + color + ";");
     }
 
-    public void login(){
+    public void login() {
+        Archive archive = new Archive();
+        if (txtPassWord.getText().equals("") || txtUserName.getText().equals("") || findComboIndex(comboUseCase) == -1) {
 
-        if(txtPassWord.getText().equals("")||txtUserName.getText().equals("")||findComboIndex(comboUseCase)==-1){
-
-            alert("لفا فیلد هار تکمیل کنید",lblAlert,"red");
-        }
-        else {
+            alert("لفا فیلد هار تکمیل کنید", lblAlert, "red");
+        } else {
             if (findComboIndex(comboUseCase) == 0) {
-                loadNewStudent();
+                if (archive.isNewStudent(txtUserName.getText(), txtPassWord.getText()))
+                    loadNewStudent();
+                else
+                    alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
+
             } else if (findComboIndex(comboUseCase) == 1) {
-                loadStudent();
+                if (archive.getStudent(Long.parseLong(txtUserName.getText())) != null)
+                    loadStudent();
+                else
+                    alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
+
             } else if (findComboIndex(comboUseCase) == 2) {
-                loadMaster();
+                if (archive.getMaster(Long.parseLong(txtUserName.getText())) != null)
+                    loadMaster();
+                else
+                    alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
+
             } else if (findComboIndex(comboUseCase) == 3) {
                 loadManager();
             }
@@ -63,7 +75,7 @@ public class LoginPageController implements Initializable {
         alert.setHeaderText(null);
         ButtonType yes = new ButtonType("بله");
         ButtonType no = new ButtonType("خیر");
-        alert.getButtonTypes().setAll(yes,no);
+        alert.getButtonTypes().setAll(yes, no);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent())
@@ -71,7 +83,7 @@ public class LoginPageController implements Initializable {
                 System.exit(0);
     }
 
-    public void  loadNewStudent(){
+    public void loadNewStudent() {
 
         Parent root;
         try {
@@ -90,7 +102,8 @@ public class LoginPageController implements Initializable {
         }
 
     }
-    public void  loadStudent(){
+
+    public void loadStudent() {
         Parent root;
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
@@ -109,7 +122,8 @@ public class LoginPageController implements Initializable {
 
 
     }
-    public void  loadMaster(){
+
+    public void loadMaster() {
 
         Parent root;
         try {
@@ -128,7 +142,8 @@ public class LoginPageController implements Initializable {
         }
 
     }
-    public void  loadManager(){
+
+    public void loadManager() {
         Parent root;
         try {
             Stage stage = (Stage) btnLogin.getScene().getWindow();
@@ -175,7 +190,7 @@ public class LoginPageController implements Initializable {
         txtUserName.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(15));
         txtPassWord.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(15));
 
-        String[]array = {"دانشجو جدیدالورود","دانشجو","استاد","کارمند آموزش"};
+        String[] array = {"دانشجو جدیدالورود", "دانشجو", "استاد", "کارمند آموزش"};
         comboUseCase.getItems().addAll(array);
 
     }

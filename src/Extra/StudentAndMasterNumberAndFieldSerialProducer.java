@@ -5,7 +5,11 @@ public class StudentAndMasterNumberAndFieldSerialProducer extends Archive {
     public long getStudentNumber() {
 
         long number;
-        int numberOfStudent = getStudents().size();
+        int numberOfStudent;
+        if (getStudents() == null)
+            numberOfStudent = 0;
+        else
+            numberOfStudent = getStudents().size();
         String str = "98536";
         number = Long.parseLong(getStringNumber(numberOfStudent, str));
 
@@ -36,12 +40,12 @@ public class StudentAndMasterNumberAndFieldSerialProducer extends Archive {
         return str;
     }
 
-    public long getFieldSerial (){
+    public long getFieldSerial() {
 
-        long serial ;
+        long serial;
         int numberOfFields = getFields().size();
         String str = "98";
-        serial = Long.parseLong(getStringNumber(numberOfFields,str));
+        serial = Long.parseLong(getStringNumber(numberOfFields, str));
 
         return serial;
     }
