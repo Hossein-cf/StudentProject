@@ -23,7 +23,7 @@ public class WeeklyProgramController implements Initializable {
     public TableColumn<Person, String> clmMasterFieldUnit;
     public TableColumn<Person, String> clmMasterFieldTimeInWeek;
 
-    private void setTable(){
+    private void setTable() {
         JFXTextField userName = new JFXTextField();
         try {
 
@@ -34,10 +34,10 @@ public class WeeklyProgramController implements Initializable {
             System.out.println(e.getMessage());
         }
         Field field = new Archive().getFieldForMaster(Long.parseLong(userName.getText()));
-        ObservableList<Person> people = FXCollections.observableArrayList(new Person(field.getFieldName(),field.getFieldNumber()+"",field.getUnit()+"",field.getFirstMeeting()+"\n"+field.getSecondMeeting()));
-        clmMasterFieldCode.setCellValueFactory(new PropertyValueFactory< Person,String >("fieldCode"));
-        clmMasterFieldName.setCellValueFactory(new PropertyValueFactory<Person,String >("fieldName"));
-        clmMasterFieldUnit.setCellValueFactory(new PropertyValueFactory<Person,String >("fieldUnit"));
+        ObservableList<Person> people = FXCollections.observableArrayList(new Person(field.getFieldName(), field.getFieldNumber() + "", field.getUnit() + "", field.getFirstMeeting() + "\n" + field.getSecondMeeting()));
+        clmMasterFieldCode.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldCode"));
+        clmMasterFieldName.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldName"));
+        clmMasterFieldUnit.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldUnit"));
         clmMasterFieldTimeInWeek.setCellValueFactory(new PropertyValueFactory<Person, String>("fieldTimeInWeek"));
         MasterTableView.setItems(people);
     }
@@ -48,17 +48,17 @@ public class WeeklyProgramController implements Initializable {
     }
 }
 
-class Person{
+class Person {
     private final SimpleStringProperty fieldName;
     private final SimpleStringProperty fieldCode;
     private final SimpleStringProperty fieldUnit;
     private final SimpleStringProperty fieldTimeInWeek;
 
-    Person(String  fieldName, String fieldCode, String  fieldUnit, String  fieldTimeInWeek) {
+    Person(String fieldName, String fieldCode, String fieldUnit, String fieldTimeInWeek) {
         this.fieldName = new SimpleStringProperty(fieldName);
         this.fieldCode = new SimpleStringProperty(fieldCode);
         this.fieldUnit = new SimpleStringProperty(fieldUnit);
-        this.fieldTimeInWeek =new SimpleStringProperty(fieldTimeInWeek);
+        this.fieldTimeInWeek = new SimpleStringProperty(fieldTimeInWeek);
     }
 
     public String getFieldName() {

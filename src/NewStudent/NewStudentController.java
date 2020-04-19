@@ -102,7 +102,23 @@ public class NewStudentController  extends Archive implements Initializable  {
         ArrayList<Student> list= getStudents();
         list.add(student);
         setStudents(list);
+        loadResultPage();
+
+
+
     }
+
+    public void loadResultPage(){
+        try {
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("./ShowResult.fxml"));
+            mainAnchorPane.getChildren().addAll(anchorPane);
+        } catch (IOException ex) {
+            System.out.println("Problem in loading");
+            ex.printStackTrace();
+        }
+
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

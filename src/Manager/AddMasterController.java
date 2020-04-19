@@ -48,6 +48,8 @@ AddMasterController extends Archive implements Initializable {
         teacher.add(master);
         setMasters(teacher);
 
+        //TODO produce MasterCode and show it
+
 }
 
 
