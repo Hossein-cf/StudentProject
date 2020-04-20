@@ -56,7 +56,7 @@ AddMasterController extends Archive implements Initializable {
             master.setIdCardNumber(new StudentAndMasterNumberAndFieldSerialProducer().getMasterNumber());
             master.setFatherName(txtMasterFatherName.getText());
             master.setPhoneNumber(txtMasterPhoneNumber.getText());
-            master.setGender(comboMasterGender.getSelectionModel().getSelectedItem().toString());
+            master.setGender((String)comboMasterGender.getValue());
             date=masterDataPicker.getValue();
             master.setDateOfBirth(String.valueOf(date));
             ArrayList<Master> teacher = getMasters();

@@ -17,20 +17,20 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class StudentsListController implements Initializable {
-    public TableView<person> listOfStudentsTableView;
-    public TableColumn<person, String> clmStudentName;
-    public TableColumn<person, String> clmStudentLastName;
-    public TableColumn<person, String> clmStudentCode;
+    public TableView<StudentListTableFormt> listOfStudentsTableView;
+    public TableColumn<StudentListTableFormt, String> clmStudentName;
+    public TableColumn<StudentListTableFormt, String> clmStudentLastName;
+    public TableColumn<StudentListTableFormt, String> clmStudentCode;
 private void setTable(){
     Field field = new Archive().getFieldForMaster(new LoginPageController().getUserName());
     ArrayList<Student> list = field.getListOfStudent();
-    ObservableList<person> people = FXCollections.observableArrayList();
+    ObservableList<StudentListTableFormt> people = FXCollections.observableArrayList();
     for (Student student:list) {
-        people.add(new person(student.getName(),student.getLastName(),student.getStudentNumber()+""));
+        people.add(new StudentListTableFormt(student.getName(),student.getLastName(),student.getStudentNumber()+""));
     }
-    clmStudentName.setCellValueFactory(new PropertyValueFactory<person,String >("studentName"));
-    clmStudentLastName.setCellValueFactory(new PropertyValueFactory<person,String >("studentLastName"));
-    clmStudentCode.setCellValueFactory(new PropertyValueFactory<person,String >("studentNumber"));
+    clmStudentName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentName"));
+    clmStudentLastName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentLastName"));
+    clmStudentCode.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentNumber"));
     listOfStudentsTableView.setItems(people);
 }
 
@@ -38,54 +38,5 @@ private void setTable(){
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
-}
-class person{
-    private final SimpleStringProperty studentName;
-    private final SimpleStringProperty studentLastName;
-    private  final SimpleStringProperty studentNumber;
-
-
-    person(String  studentName, String  studentLastName, String  studentNumber) {
-        this.studentName =new SimpleStringProperty( studentName);
-        this.studentLastName =new SimpleStringProperty( studentLastName);
-        this.studentNumber = new SimpleStringProperty(studentNumber);
-    }
-
-
-    public String getStudentName() {
-        return studentName.get();
-    }
-
-    public SimpleStringProperty studentNameProperty() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName.set(studentName);
-    }
-
-    public String getStudentLastName() {
-        return studentLastName.get();
-    }
-
-    public SimpleStringProperty studentLastNameProperty() {
-        return studentLastName;
-    }
-
-    public void setStudentLastName(String studentLastName) {
-        this.studentLastName.set(studentLastName);
-    }
-
-    public String getStudentNumber() {
-        return studentNumber.get();
-    }
-
-    public SimpleStringProperty studentNumberProperty() {
-        return studentNumber;
-    }
-
-    public void setStudentNumber(String studentNumber) {
-        this.studentNumber.set(studentNumber);
     }
 }

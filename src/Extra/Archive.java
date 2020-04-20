@@ -84,7 +84,7 @@ public class Archive implements Initializable {
             bufferedReader.readLine();
             while (bufferedReader.ready()) {
                 String[] strings = bufferedReader.readLine().split(",");
-                System.out.println(strings[2] + "   " + strings[6]);
+//                System.out.println(strings[2] + "   " + strings[6]);
                 if (strings[2].equals(nationalNumber) && strings[6].equals(fileNumber))
                     return true;
             }

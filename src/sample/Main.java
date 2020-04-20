@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/LoginPage/LoginPage.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 837, 473));
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+//        primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
     }
 
