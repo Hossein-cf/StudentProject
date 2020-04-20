@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Add master and field finished">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Extra/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Extra/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/AddFieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/AddFieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/AddMasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/AddMasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/FXML/AddFieldFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/FXML/AddFieldFXML.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/ChooseUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/ChooseUnitController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,8 +216,26 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1586710717797" duration="678000" />
-      <workItem from="1587026816505" duration="12316000" />
+      <workItem from="1587026816505" duration="14718000" />
+      <workItem from="1587135588839" duration="6749000" />
+      <workItem from="1587216082996" duration="4650000" />
+      <workItem from="1587302008201" duration="4908000" />
     </task>
+    <task id="LOCAL-00001" summary="Add master and field finished">
+      <created>1587064019209</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587064019210</updated>
+    </task>
+    <task id="LOCAL-00002" summary="choose unit completed">
+      <created>1587307773416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587307773416</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +246,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -242,5 +257,8 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Add master and field finished" />
+    <MESSAGE value="choose unit completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="choose unit completed" />
   </component>
 </project>

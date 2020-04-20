@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -10,24 +11,36 @@
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="749.0" style="-fx-background-color: #006DB3;">
          <children>
-            <JFXButton fx:id="btnBack" prefHeight="39.0" prefWidth="59.0" text="بازگشت" onMouseClicked="#back" />
-            <JFXButton fx:id="btnExit" prefHeight="39.0" prefWidth="59.0" text="خروج" onMouseClicked="#exit" />
+            <JFXButton fx:id="btnBack" onMouseClicked="#back" prefHeight="39.0" prefWidth="59.0" text="بازگشت" />
+            <JFXButton fx:id="btnExit" onMouseClicked="#exit" prefHeight="39.0" prefWidth="59.0" text="خروج" />
          </children>
       </HBox>
       <VBox alignment="TOP_RIGHT" layoutX="-11.0" layoutY="69.0" prefHeight="379.0" prefWidth="115.0" style="-fx-background-color: #29B6F6; -fx-background-radius: 5;">
          <children>
-            <JFXButton fx:id="btnStudentPersonalInfo" prefHeight="60.0" prefWidth="104.0" text="مشخصات فردی" onMouseClicked="#loadStudentPersonalInfo">
+            <JFXButton fx:id="btnStudentPersonalInfo" onMouseClicked="#loadStudentPersonalInfo" prefHeight="60.0" prefWidth="104.0" text="مشخصات فردی">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnStudentWeeklyPrograms" prefHeight="60.0" prefWidth="104.0" text="برنامه هفتگی" onMouseClicked="#loadStudentWeeklyProgram">
+            <JFXButton fx:id="btnStudentWeeklyPrograms" onMouseClicked="#loadStudentWeeklyProgram" prefHeight="60.0" prefWidth="104.0" text="برنامه هفتگی">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
          </children>
       </VBox>
-      <AnchorPane fx:id="StudentMainAnchorPane" layoutX="117.0" layoutY="69.0" prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;" />
+      <AnchorPane fx:id="StudentMainAnchorPane" layoutX="117.0" layoutY="69.0" prefHeight="379.0" prefWidth="618.0" style="-fx-background-color: B2EBF2; -fx-background-radius: 5;">
+         <children>
+            <Label alignment="CENTER" layoutX="172.0" layoutY="27.0" prefHeight="23.0" prefWidth="275.0" text="كاربر گرامي شما بعنوان دانشجو وارد شده ايد!!!" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="13.0" layoutY="70.0" prefHeight="23.0" prefWidth="591.0" text="از منوي  موجود مي توانيد از امكانات موجود استفاده كنيد.">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
