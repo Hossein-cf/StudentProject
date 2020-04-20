@@ -21,22 +21,23 @@ public class StudentsListController implements Initializable {
     public TableColumn<StudentListTableFormt, String> clmStudentName;
     public TableColumn<StudentListTableFormt, String> clmStudentLastName;
     public TableColumn<StudentListTableFormt, String> clmStudentCode;
-private void setTable(){
-    Field field = new Archive().getFieldForMaster(new LoginPageController().getUserName());
-    ArrayList<Student> list = field.getListOfStudent();
-    ObservableList<StudentListTableFormt> people = FXCollections.observableArrayList();
-    for (Student student:list) {
-        people.add(new StudentListTableFormt(student.getName(),student.getLastName(),student.getStudentNumber()+""));
+
+    private void setTable() {
+        Field field = new Archive().getFieldForMaster(new LoginPageController().getUserName());
+        ArrayList<Student> list = field.getListOfStudent();
+        ObservableList<StudentListTableFormt> people = FXCollections.observableArrayList();
+        for (Student student : list) {
+            people.add(new StudentListTableFormt(student.getName(), student.getLastName(), student.getStudentNumber() + ""));
+        }
+        clmStudentName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt, String>("studentName"));
+        clmStudentLastName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt, String>("studentLastName"));
+        clmStudentCode.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt, String>("studentNumber"));
+        listOfStudentsTableView.setItems(people);
     }
-    clmStudentName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentName"));
-    clmStudentLastName.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentLastName"));
-    clmStudentCode.setCellValueFactory(new PropertyValueFactory<StudentListTableFormt,String >("studentNumber"));
-    listOfStudentsTableView.setItems(people);
-}
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setTable();
     }
 }

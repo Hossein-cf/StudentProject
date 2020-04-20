@@ -6,6 +6,7 @@ import Extra.Master;
 import Extra.Student;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXToggleButton;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -55,7 +56,7 @@ public class ChooseUnitController extends Archive implements Initializable {
         String[] masters = new String[getMasters().size()];
         for (int i = 0; i < masters.length; i++) {
             master = getMasters().get(i);
-            masters[i] = String.valueOf(master.getIdCardNumber());
+            masters[i] = String.valueOf(master.getMasterNumber());
         }
         comboChooseField.getItems().addAll(fields);
         comboChooseMaster.getItems().addAll(masters);
@@ -64,27 +65,23 @@ public class ChooseUnitController extends Archive implements Initializable {
     }
 
     public void getValue() {
-        Field field = new Field();
-        Master master;
-        ArrayList<Student> students = null;
-        for (int i = 0; i < chooseUnitTableView.getFixedCellSize(); i++) {
+        Field field ;
+//        Master master;
+        ArrayList<Student> students = new ArrayList<>();
+        for (int i = 0; i < chooseUnitTableView.getItems().size(); i++) {
             chooseUnitTableFormat person = (chooseUnitTableFormat) chooseUnitTableView.getItems().get(i);
             if (person.getChooseStudent().isSelected()) {
+
                 students.add(getStudent(Long.parseLong(person.getStudentCode())));
             }
         }
-        field.setExamStartTime(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getExamStartTime());
-        field.setSecondMeeting(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getSecondMeeting());
-        field.setFirstMeeting(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getFirstMeeting());
-        field.setFieldNumber(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getFieldNumber());
-        field.setUnit(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getUnit());
-        field.setFieldName(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getFieldName());
+
+        field = getField(String.valueOf(comboChooseField.getSelectionModel().getSelectedItem()));
+
 
         field.setListOfStudent(students);
-        field.setMaster(getMaster((Long) comboChooseMaster.getValue()));
-        ArrayList<Field> fields = getFields();
-        fields.add(field);
-        setFields(fields);
+        field.setMaster(getMaster(Long.parseLong(comboChooseMaster.getValue()+"")));
+
 
     }
 
