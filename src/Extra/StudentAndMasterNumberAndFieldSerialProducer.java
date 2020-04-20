@@ -22,7 +22,7 @@ public class StudentAndMasterNumberAndFieldSerialProducer extends Archive {
         int numberOfMaster = getMasters().size();
         String str = "855494";
         number = Long.parseLong(getStringNumber(numberOfMaster, str));
-
+        System.out.println(number);
         return number;
     }
 
@@ -36,7 +36,7 @@ public class StudentAndMasterNumberAndFieldSerialProducer extends Archive {
             str += "0" + number;
         } else if (number <= 9999)
             str += number;
-
+        System.out.println(str);
         return str;
     }
 

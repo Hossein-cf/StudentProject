@@ -53,7 +53,7 @@ AddMasterController extends Archive implements Initializable {
             master.setName(txtMasterName.getText());
             master.setLastName(txtMasterLastName.getText());
             master.setNationalNumber(Long.parseLong(txtMasterNationalCode.getText()));
-            master.setIdCardNumber(new StudentAndMasterNumberAndFieldSerialProducer().getMasterNumber());
+            master.setMasterNumber(new StudentAndMasterNumberAndFieldSerialProducer().getMasterNumber());
             master.setFatherName(txtMasterFatherName.getText());
             master.setPhoneNumber(txtMasterPhoneNumber.getText());
             master.setGender((String)comboMasterGender.getValue());
@@ -63,7 +63,7 @@ AddMasterController extends Archive implements Initializable {
             teacher.add(master);
             setMasters(teacher);
             String result = master.getIdCardNumber()+"";
-
+            System.out.println(master.getMasterNumber());
             alert("شماره دانشجويي شما "+result+"مي باشد",lblAlert,"green");
 
 

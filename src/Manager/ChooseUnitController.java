@@ -29,16 +29,15 @@ public class ChooseUnitController extends Archive implements Initializable {
     public TableColumn clmChooseStudent;
 
     void setTable() {
-        Student student;
+//        Student student;
         ObservableList<chooseUnitTableFormat> people = FXCollections.observableArrayList();
         ArrayList<Student> students = getStudents();
-        for (Student student1:students
-             ) {
-            System.out.println(student1.getStudentNumber());
-        }
-        for (Student value : students) {
-            student = value;
-            people.add(new chooseUnitTableFormat(student.getName(), student.getLastName(), student.getStudentNumber() + "", new JFXToggleButton()));
+//        for (Student student1:students) {
+//            System.out.println(student1.getStudentNumber());
+//        }
+        for (Student student1 : students) {
+
+            people.add(new chooseUnitTableFormat(student1.getName(), student1.getLastName(), student1.getStudentNumber() + "", new JFXToggleButton()));
         }
         clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentName"));
         clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentLastName"));
