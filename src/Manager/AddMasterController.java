@@ -53,18 +53,18 @@ AddMasterController extends Archive implements Initializable {
             master.setName(txtMasterName.getText());
             master.setLastName(txtMasterLastName.getText());
             master.setNationalNumber(Long.parseLong(txtMasterNationalCode.getText()));
-            master.setMasterNumber(new StudentAndMasterNumberAndFieldSerialProducer().getMasterNumber());
+            master.setIdCardNumber(new StudentAndMasterNumberAndFieldSerialProducer().getMasterNumber());
             master.setFatherName(txtMasterFatherName.getText());
             master.setPhoneNumber(txtMasterPhoneNumber.getText());
-            master.setGender((String)comboMasterGender.getValue());
+            master.setGender(comboMasterGender.getSelectionModel().getSelectedItem().toString());
             date=masterDataPicker.getValue();
             master.setDateOfBirth(String.valueOf(date));
             ArrayList<Master> teacher = getMasters();
             teacher.add(master);
             setMasters(teacher);
             String result = master.getIdCardNumber()+"";
-            System.out.println(master.getMasterNumber());
-            alert("شماره دانشجويي شما "+result+"مي باشد",lblAlert,"green");
+
+            alert("شماره استادی شما "+result+"مي باشد",lblAlert,"green");
 
 
 
