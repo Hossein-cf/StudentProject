@@ -40,9 +40,9 @@ public class ChooseUnitController extends Archive implements Initializable {
             people.add(new chooseUnitTableFormat(student1.getName(), student1.getLastName(), student1.getStudentNumber() + "", new JFXToggleButton()));
         }
         clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentName"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentLastName"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentCode"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, JFXToggleButton>("chooseStudent"));
+        clmStudentLastName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentLastName"));
+        clmStudentCode.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentCode"));
+        clmChooseStudent.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, JFXToggleButton>("chooseStudent"));
         chooseUnitTableView.setItems(people);
 
         String[] fields = new String[getFields().size()];
