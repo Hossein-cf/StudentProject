@@ -64,7 +64,7 @@ AddMasterController extends Archive implements Initializable {
             setMasters(teacher);
             String result = master.getIdCardNumber()+"";
 
-            alert("شماره دانشجويي شما "+result+"مي باشد",lblAlert,"green");
+            alert("شماره استادی شما "+result+"مي باشد",lblAlert,"green");
 
 
 
