@@ -29,17 +29,20 @@ public class ChooseUnitController extends Archive implements Initializable {
     public TableColumn clmChooseStudent;
 
     void setTable() {
-        Student student;
-        ObservableList<Person> people = FXCollections.observableArrayList();
+//        Student student;
+        ObservableList<chooseUnitTableFormat> people = FXCollections.observableArrayList();
         ArrayList<Student> students = getStudents();
-        for (Student value : students) {
-            student = value;
-            people.add(new Person(student.getName(), student.getLastName(), student.getStudentNumber() + "", new JFXToggleButton()));
+//        for (Student student1:students) {
+//            System.out.println(student1.getStudentNumber());
+//        }
+        for (Student student1 : students) {
+
+            people.add(new chooseUnitTableFormat(student1.getName(), student1.getLastName(), student1.getStudentNumber() + "", new JFXToggleButton()));
         }
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<Person, String>("studentName"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<Person, String>("studentLastName"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<Person, String>("studentCode"));
-        clmStudentName.setCellValueFactory(new PropertyValueFactory<Person, JFXToggleButton>("chooseStudent"));
+        clmStudentName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentName"));
+        clmStudentLastName.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentLastName"));
+        clmStudentCode.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, String>("studentCode"));
+        clmChooseStudent.setCellValueFactory(new PropertyValueFactory<chooseUnitTableFormat, JFXToggleButton>("chooseStudent"));
         chooseUnitTableView.setItems(people);
 
         String[] fields = new String[getFields().size()];
@@ -65,7 +68,7 @@ public class ChooseUnitController extends Archive implements Initializable {
         Master master;
         ArrayList<Student> students = null;
         for (int i = 0; i < chooseUnitTableView.getFixedCellSize(); i++) {
-            Person person = (Person) chooseUnitTableView.getItems().get(i);
+            chooseUnitTableFormat person = (chooseUnitTableFormat) chooseUnitTableView.getItems().get(i);
             if (person.getChooseStudent().isSelected()) {
                 students.add(getStudent(Long.parseLong(person.getStudentCode())));
             }
@@ -78,7 +81,7 @@ public class ChooseUnitController extends Archive implements Initializable {
         field.setFieldName(getField((String) comboChooseField.getSelectionModel().getSelectedItem()).getFieldName());
 
         field.setListOfStudent(students);
-        field.setMaster(getMaster((Long) comboChooseMaster.getSelectionModel().getSelectedItem()));
+        field.setMaster(getMaster((Long) comboChooseMaster.getValue()));
         ArrayList<Field> fields = getFields();
         fields.add(field);
         setFields(fields);
@@ -93,34 +96,4 @@ public class ChooseUnitController extends Archive implements Initializable {
     }
 }
 
-class Person {
-    final private String studentName;
-    final private String studentLastName;
-    final private String studentCode;
-    final private JFXToggleButton chooseStudent;
 
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public String getStudentLastName() {
-        return studentLastName;
-    }
-
-    public String getStudentCode() {
-        return studentCode;
-    }
-
-    public JFXToggleButton getChooseStudent() {
-        return chooseStudent;
-    }
-
-    Person(String studentName, String studentLastName, String studentCode, JFXToggleButton chooseStudent) {
-        this.studentName = studentName;
-        this.studentLastName = studentLastName;
-        this.studentCode = studentCode;
-        this.chooseStudent = chooseStudent;
-    }
-
-
-}
