@@ -56,7 +56,7 @@ public class ChooseUnitController extends Archive implements Initializable {
         String[] masters = new String[getMasters().size()];
         for (int i = 0; i < masters.length; i++) {
             master = getMasters().get(i);
-            masters[i] = String.valueOf(master.getMasterNumber());
+            masters[i] = String.valueOf(master.getIdCardNumber());
         }
         comboChooseField.getItems().addAll(fields);
         comboChooseMaster.getItems().addAll(masters);

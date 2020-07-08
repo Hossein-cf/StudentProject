@@ -74,9 +74,11 @@ public class LoginPageController implements Initializable {
                     loadMaster();
                     userName=Long.parseLong(txtUserName.getText());
 
-                } else
+                } else {
                     alert("مشخصات وارد شده صحیح نمیباشند", lblAlert, "red");
-
+                    System.out.println(txtUserName.getText()+txtPassWord.getText());
+                    //archive.getMaster(Long.parseLong(txtUserName.getText())).getLastName()
+                }
             } else if (findComboIndex(comboUseCase) == 3) {
                 loadManager();
             }

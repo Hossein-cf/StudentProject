@@ -48,7 +48,7 @@ public class Archive implements Initializable {
 
     public Master getMaster(long masterNumber) {
         for (Master master : getMasters()) {
-            if (master.getMasterNumber() == masterNumber)
+            if (master.getIdCardNumber() == masterNumber)
                 return master;
         }
         return null;
@@ -69,7 +69,7 @@ public class Archive implements Initializable {
 
     public Field getFieldForMaster(long masterNumber) {
         for (Field field : getFields()) {
-            if (field.getMaster().getMasterNumber() == masterNumber)
+            if (field.getMaster().getIdCardNumber() == masterNumber)
                 return field;
         }
 
